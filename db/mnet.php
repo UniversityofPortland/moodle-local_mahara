@@ -2,9 +2,9 @@
 defined('MOODLE_INTERNAL') || die();
 
 $publishes = array(
-    'maharaviewsubmission' => array(
+    'mahara' => array(
         'apiversion' => 1,
-        'classname'  => 'maharaviewsubmission_mnetservice',
+        'classname'  => 'mahara_mnetservice',
         'filename'   => 'mnetlib.php',
         'methods'    => array(
             'donothing',
@@ -13,7 +13,7 @@ $publishes = array(
 );
 
 $subscribes = array(
-    'maharaviewsubmission' => array(
+    'mahara' => array(
         'get_views_for_user' => 'mod/mahara/rpclib.php/get_views_for_user',
         'submit_view_for_assignment' => 'mod/mahara/rpclib.php/submit_view_for_assessment',
         'release_submitted_view' => 'mod/mahara/rpclib.php/release_submitted_view',

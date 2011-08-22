@@ -6,7 +6,7 @@
  * @author aaronw
  *
  */
-class maharaviewsubmission_mnetservice {
+class mahara_mnetservice {
     public function donothing() {
     }
 }
