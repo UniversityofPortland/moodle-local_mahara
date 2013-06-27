@@ -127,14 +127,17 @@ class mahara_mnetservice {
     global $DB;
 
     $service = $this;
-    $user = $DB->get_record('user', array('id' => $userid));
+    $user = null;
+    if ($userid) {
+      $user = $DB->get_record('user', array('id' => $userid));
+    }
     return $this
       ->call_mnet_peer(
         function($client) use ($user, $viewid, $meta) {
           $client->set_method('mod/mahara/rpclib.php/release_submitted_view');
           $client->add_param($viewid);
           $client->add_param($meta);
-          $client->add_param($user->username);
+          $client->add_param(isset($user) ? $user->username : null);
         })
       ->withRight()
       ->each(
