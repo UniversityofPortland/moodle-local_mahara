@@ -1,4 +1,4 @@
-* Mahara Local Plugin
+# Mahara Local Plugin
 
 This plugin allows your Moodle installation to subscribe to Mahara XML-RPC endpoints. Included is a table housing
 portfolio's pulled from Mahara by other plugins.
@@ -6,7 +6,7 @@ portfolio's pulled from Mahara by other plugins.
 While it original purpose is a requirement for the [Maraha assignment plugins][1], it can easlity be extending to
 support more XML-RPC endpoints.
 
-== Installation
+## Installation
 
 Install of the plugin is very easy. There are two installtion methods:
 
@@ -19,7 +19,7 @@ Install of the plugin is very easy. There are two installtion methods:
 
 The remaining installation is taken care of by Moodle, by clicking on *Notifications*.
 
-** Associated plugins
+## Associated plugins
 
 There are currently two plugins that require this integration:
 
