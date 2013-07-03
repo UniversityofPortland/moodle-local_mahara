@@ -6,20 +6,20 @@
   <TABLES>
     <TABLE NAME="mahara_portfolio" COMMENT="A table containing Mahara portfolios">
       <FIELDS>
-        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true"/>
-        <FIELD NAME="page" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
-        <FIELD NAME="host" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
-        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false"/>
-        <FIELD NAME="title" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false"/>
-        <FIELD NAME="url" TYPE="text" NOTNULL="true" SEQUENCE="false"/>
+        <FIELD NAME="id" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="true" NEXT="page"/>
+        <FIELD NAME="page" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" NEXT="host" PREVIOUS="id"/>
+        <FIELD NAME="host" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" NEXT="userid" PREVIOUS="page"/>
+        <FIELD NAME="userid" TYPE="int" LENGTH="10" NOTNULL="true" SEQUENCE="false" NEXT="title" PREVIOUS="host"/>
+        <FIELD NAME="title" TYPE="char" LENGTH="255" NOTNULL="true" SEQUENCE="false" NEXT="url" PREVIOUS="userid"/>
+        <FIELD NAME="url" TYPE="text" NOTNULL="true" SEQUENCE="false" PREVIOUS="title"/>
       </FIELDS>
       <KEYS>
         <KEY NAME="primary" TYPE="primary" FIELDS="id"/>
       </KEYS>
       <INDEXES>
-        <INDEX NAME="portfolioid" UNIQUE="false" FIELDS="page"/>
-        <INDEX NAME="port-user" UNIQUE="false" FIELDS="page, userid"/>
-        <INDEX NAME="port-host" UNIQUE="true" FIELDS="page, host"/>
+        <INDEX NAME="portfolioid" UNIQUE="false" FIELDS="page" NEXT="port-user"/>
+        <INDEX NAME="port-user" UNIQUE="false" FIELDS="page, userid" NEXT="port-host" PREVIOUS="portfolioid"/>
+        <INDEX NAME="port-host" UNIQUE="true" FIELDS="page, host" PREVIOUS="port-user"/>
       </INDEXES>
     </TABLE>
   </TABLES>
