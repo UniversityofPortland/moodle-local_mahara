@@ -3,12 +3,12 @@
 This plugin allows your Moodle installation to subscribe to Mahara XML-RPC endpoints. Included is a table housing
 portfolio's pulled from Mahara by other plugins.
 
-While it original purpose is a requirement for the [Maraha assignment plugins][1], it can easlity be extending to
+While its original purpose is a requirement for the [Maraha assignment plugins][1], it can easily be extended to
 support more XML-RPC endpoints.
 
 ## Installation
 
-Install of the plugin is very easy. There are two installtion methods:
+Installation of the plugin is very easy. There are two installation methods:
 
 1. Download the source archive for this plugin, and extract at the following location: `{Moodle_Root}/local/mahara`
 2. Execute the following command:
@@ -17,7 +17,7 @@ Install of the plugin is very easy. There are two installtion methods:
 > git clone git@github.com:fellowapeman/local-mahara.git {Moodle_Root}/local/mahara
 ```
 
-The remaining installation is taken care of by Moodle, by clicking on *Notifications*.
+The remaining installation is taken care of by Moodle by clicking on *Notifications*.
 
 ## Associated plugins
 
@@ -31,7 +31,19 @@ There are currently two plugins that require this integration:
 
 ## License
 
-This repository houses an updated Mahara assignment submission plugin.
+The Moodle local-mahara plugin is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+The Moodle local-mahara plugin is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+For a copy of the GNU General Public License see http://www.gnu.org/licenses/.
+
+## Credits
 
 Developed for the University of Portland by Philip Cali and Tony Box (box@up.edu).
 
