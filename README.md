@@ -14,7 +14,7 @@ Install of the plugin is very easy. There are two installtion methods:
 2. Execute the following command:
 
 ```
-> git clone git@github.com:philcali/local-mahara.git {Moodle_Root}/local/mahara
+> git clone git@github.com:fellowapeman/local-mahara.git {Moodle_Root}/local/mahara
 ```
 
 The remaining installation is taken care of by Moodle, by clicking on *Notifications*.
@@ -26,5 +26,5 @@ There are currently two plugins that require this integration:
 1. [Mahara assignment submissions][1]
 2. [Mahara assignment feedback][2]
 
-[1]: https://github.com/philcali/assign-mahara
-[2]: https://github.com/philcali/assign-mahara-feedback
+[1]: https://github.com/fellowapeman/assign-mahara
+[2]: https://github.com/fellowapeman/assign-mahara-feedback
