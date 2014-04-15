@@ -22,6 +22,14 @@ interface Monadic {
   public function map($callback);
 
   /**
+   * Transforms and flattens
+   *
+   * @param callable $callback (mixed => mixed)
+   * @return mixed
+   */
+  public function flatMap($callback);
+
+  /**
    * Mutate
    *
    * @param callable $callback (mixed => void)
@@ -78,6 +86,20 @@ abstract class Model_Option implements Monadic {
       return new Model_Some($callback($this->get()));
     }
     return $this;
+  }
+
+  /**
+   * @see parent
+   * @return Model_Option
+   */
+  public function flatMap($callback) {
+    return $this->map(function($contained) use ($callback) {
+      if ($contained instanceof Monadic) {
+        return $contained->flatMap($callback);
+      } else {
+        return $callback($contained);
+      }
+    });
   }
 
   /**
@@ -292,6 +314,20 @@ abstract class Either_Projection implements Monadic {
     } else {
       return $this;
     }
+  }
+
+  /**
+   * @see parent
+   * @return Either_Projection
+   */
+  public function flatMap($callback) {
+    return $this->map(function($contained) use ($callback) {
+      if ($contained instanceof Monadic) {
+        return $contained->flatMap($callback);
+      } else {
+        return $callback($contained);
+      }
+    });
   }
 
   /**

@@ -236,6 +236,23 @@ class mahara_mnetservice {
   }
 
   /**
+   * Attempts to get a single portfolio for a user
+   *
+   * @param int $userid
+   * @param int $viewid
+   * @return Model_Option
+   */
+  public function get_users_portfolio($userid, $viewid) {
+    global $DB;
+    $obj = $DB->get_record(self::PORTFOLIO_TABLE, array(
+      'userid' => $userid,
+      'page' => $viewid
+    ));
+
+    return $obj ? new Model_Some($obj) : new Model_None();
+  }
+
+  /**
    * Makes a request to the mnet peer
    *
    * @param callable $callback
